@@ -4,6 +4,7 @@ import ReactCountryFlag from "react-country-flag";
 
 const MoviesCard = (props) => {
 
+    const { movie } = props
 
     function bandiere(lingua) {
         const bandiereNazioni = {
@@ -15,8 +16,15 @@ const MoviesCard = (props) => {
 
         return bandiereNazioni[lingua] || "no flag";
     }
-    const { movie } = props
 
+    function voti(voto) {
+        const votoFinale = Math.ceil(voto / 2);
+        const stellePiene = "⭐".repeat(votoFinale);
+        const stelleVuote = "☆".repeat(5 - votoFinale);
+        console.log(votoFinale);
+
+        return stellePiene + stelleVuote;
+    }
     return (
         <>
 
@@ -28,7 +36,8 @@ const MoviesCard = (props) => {
                     svg
                     title={movie.original_language}
                 />
-                <p>{movie.vote_average}</p>
+                <p>{voti(movie.vote_average)}</p>
+                <img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="" />
 
             </div>
 
