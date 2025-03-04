@@ -2,9 +2,9 @@ import React from "react";
 import ReactCountryFlag from "react-country-flag";
 import "./Card.css";
 
-const MoviesCard = (props) => {
+const ShowsTvCard = (props) => {
 
-    const { movie } = props
+    const { show } = props
 
     function bandiere(lingua) {
         const bandiereNazioni = {
@@ -28,18 +28,18 @@ const MoviesCard = (props) => {
     return (
         <>
 
-            <div key={movie.id} className="card">
-                <img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="poster" />
+            <div key={show.id} className="card">
+                <img src={`https://image.tmdb.org/t/p/w342${show.poster_path}`} alt="poster" />
                 <div className="overlay">
-                    <h3>{movie.title}</h3>
-                    <p>{movie.original_title}</p>
+                    <h3>{show.name}</h3>
+                    <p>{show.original_name}</p>
                     <ReactCountryFlag
-                        countryCode={bandiere(movie.original_language)}
+                        countryCode={bandiere(show.original_language)}
                         svg
-                        title={movie.original_language}
+                        title={show.original_language}
                     />
-                    <p>{voti(movie.vote_average)}</p>
-                    <p>{movie.overview}</p>
+                    <p>{voti(show.vote_average)}</p>
+                    <p>{show.overview}</p>
                 </div>
 
             </div>
@@ -50,4 +50,4 @@ const MoviesCard = (props) => {
 
 
 
-export default MoviesCard
+export default ShowsTvCard

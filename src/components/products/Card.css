@@ -1,4 +1,4 @@
-.moviesContainer {
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -6,11 +6,11 @@
     padding: 20px;
 }
 
-.movieCard {
+.card {
     position: relative;
 }
 
-.movieCard img {
+.card img {
     display: block;
 }
 
@@ -30,6 +30,6 @@
 }
 
 
-.movieCard:hover .overlay {
+.card:hover .overlay {
     display: flex;
 }

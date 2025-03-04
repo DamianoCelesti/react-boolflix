@@ -1,12 +1,11 @@
-import MoviesList from "./products/MoviesList";
+import MoviesShows from "./products/MoviesShows";
 
 
 export default function Main() {
     return (
-        <>
-            <h1>Film e serie tv</h1>
-            <MoviesList />
-        </>
+
+        <MoviesShows />
+
     );
 }
 
