@@ -14,13 +14,12 @@ const MoviesList = () => {
 
 
     return (
-        <>
-
-
+        <div className="moviesContainer">
             {movies.map((movie) => (
                 <MoviesCard key={movie.id} movie={movie} />
             ))}
-        </>
+        </div>
+
     )
 }
 
